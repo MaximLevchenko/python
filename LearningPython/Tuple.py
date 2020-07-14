@@ -13,3 +13,4 @@ print('the amount of all animals is :', len(new_zoo) - 1 + \
       len(new_zoo[2]))
 singleton=(2,) #Creating the tuple with only 1 variable
 
+

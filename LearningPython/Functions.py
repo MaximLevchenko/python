@@ -204,10 +204,5 @@ def func():
 if __name__ == "__main__":
     func()
 
-
-
 print('Script2. My name is: %s' % __name__)
 print('Importing ifname1')
-
-
-

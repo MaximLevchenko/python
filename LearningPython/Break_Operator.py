@@ -1,4 +1,6 @@
+from selenium import webdriver
 app = True
+
 while app:  # Infinite loop to check the input
     s = input('Enter your text')
     if s == ('Exit'):
@@ -9,3 +11,5 @@ while app:  # Infinite loop to check the input
 
     print(len(s), '- This is the quantity of symbols in your word')
 print('You have exited the program')
+
+

@@ -29,9 +29,9 @@ class InstaBot:
         sleep(2)
         self.driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[2]/a').click()
         sleep(4)
-        # def __chat__(self):
-        self.driver.find_element_by_id(
-            'f1b6ace355ea738').click() #Clicking on specific person
+
+    def open_chat(self):
+        self.driver.find_element_by_link_text("net_tale").click()  # Clicking on specific person
         sleep(2)
         dms_box = self.driver.find_element_by_xpath('//textarea[@placeholder="Напишите сообщение..."]')
         dms_box.send_keys('Test', '\ue007')

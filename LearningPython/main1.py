@@ -1,10 +1,6 @@
 from time import sleep
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-
-#'//button[contains(text()."Не сейчас")]'
+from selenium.webdriver.common.keys import Keys
 
 
 class InstaBot:
@@ -22,11 +18,23 @@ class InstaBot:
             .click()
         sleep(4)
         self.driver.find_element_by_xpath('/html/body/div[1]/section/main/div/div/div/div/button').click()
-        sleep(4)
+        sleep(2)
         self.driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]').click()
-        sleep(3)
-        self.driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[2]/a/svg').click()
-        sleep(10)
+        sleep(2)
+        self.driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[5]/span').click()
+        sleep(2)
+
+        self.driver.find_element_by_xpath(
+            '/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[5]/div[2]/div/div[2]/div[2]/a[1]/div/div[2]/div/div/div/div').click()
+        sleep(2)
+        self.driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[2]/a').click()
+        sleep(4)
+        # def __chat__(self):
+        self.driver.find_element_by_id(
+            'f1b6ace355ea738').click() #Clicking on specific person
+        sleep(2)
+        dms_box = self.driver.find_element_by_xpath('//textarea[@placeholder="Напишите сообщение..."]')
+        dms_box.send_keys('Test', '\ue007')
 
 
-InstaBot('_max_leva_', '447781470659')
+my_bot = InstaBot('_max_leva_', '447781470659maks')

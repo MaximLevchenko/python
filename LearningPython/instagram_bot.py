@@ -1,6 +1,10 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from secrets import pw
+
+
+
 
 
 class InstaBot:
@@ -12,11 +16,11 @@ class InstaBot:
         self.driver.get('https://www.instagram.com/?hl=ru')
         sleep(2)
         self.driver.find_element_by_xpath("//input[@name=\"username\"]") \
-            .send_keys(username)
+            .send_keys(username)#Process of logining in(username)
         self.driver.find_element_by_xpath("//input[@name=\"password\"]") \
-            .send_keys(password)
+            .send_keys(password) #Process of logining in(password)
         self.driver.find_element_by_xpath('//button[@type="submit"]') \
-            .click()
+            .click() #Submitting our log in form
         sleep(4)
         self.driver.find_element_by_xpath(
             '/html/body/div[1]/section/main/div/div/div/div/button').click()  # Notifications

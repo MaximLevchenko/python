@@ -14,12 +14,12 @@ class Robot:
         Robot.population += 1
 
     def __del__(self):
-        '''This method is invoked when the class object is destroyed'''
+        '''This method is invoked when the class class reference is destroyed'''
 
-        if Robot.population == 0:
-            # print("{} was the last robot alive346".format(self.name))
+        if Robot.population == 0:  # Here we check whether the population of robots is 0 or not, is it is - we shut down this if else block
             return
-        elif self.isAlive==False:
+        elif not self.isAlive:  # Here we check whether the robot is dead, if it is -  we enter this code block
+            print("\n{} is already dead, there is no point in killing it again\n".format(self.name))
             return
         else:
             print('The robot with the name {},strength: {} and age {} is destroyed'.format(self.name, self.strength,
@@ -78,10 +78,5 @@ robot3.sayHi()
 robot3.howManyRobots()
 
 Robot.compare(Robot)
-print('\nHere robots can continue their job.\n')
 
 print('Robots ended their job, let`s delete them\n')
-robot1.__del__()
-robot2.__del__()
-robot3.__del__()
-

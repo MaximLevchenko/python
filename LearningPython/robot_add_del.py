@@ -16,7 +16,8 @@ class Robot:
     def __del__(self):
         '''This method is invoked when the class class reference is destroyed'''
 
-        if Robot.population == 0:  # Here we check whether the population of robots is 0 or not, is it is - we shut down this if else block
+        if Robot.population == 0:  # Here we check whether the population of robots is 0 or not, is it is - we shut
+            # down this if else block
             return
         elif not self.isAlive:  # Here we check whether the robot is dead, if it is -  we enter this code block
             print("\n{} is already dead, there is no point in killing it again\n".format(self.name))
@@ -34,7 +35,7 @@ class Robot:
     def sayHi(self):
         '''Then we enter this method cause we realise this in the class object realisation'''
         print('Hi, my name is {}'.format(self.name))
-
+    @staticmethod
     def howManyRobots(self):
         '''Same with this one, it is entered in the sequence described in the method realisation'''
         print("We have {} robots".format(Robot.population))
@@ -48,7 +49,8 @@ class Robot:
             loser_name = robot2.name
             difference_in_strength = robot1.strength - robot2.strength
             print(
-                "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} is now dead".format(
+                "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} "
+                "is now dead".format(
                     robot1.name, robot2.name, winner_name, difference_in_strength, loser_name))
             loser.__del__()
             loser.isAlive = False
@@ -61,7 +63,8 @@ class Robot:
             loser_name = robot1.name
             difference_in_strength = robot2.strength - robot1.strength
             print(
-                "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} is now dead".format(
+                "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} "
+                "is now dead".format(
                     robot1.name, robot2.name, winner_name, difference_in_strength, loser_name))
             loser.__del__()
             loser.isAlive = False

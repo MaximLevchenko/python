@@ -13,13 +13,14 @@ class Robot:
                                                                                               self.strength))
         Robot.population += 1
 
-    def __del__(self, ):
+    def __del__(self):
         '''This method is invoked when the class object is destroyed'''
 
         if Robot.population == 0:
             # print("{} was the last robot alive346".format(self.name))
             return
-
+        elif self.isAlive==False:
+            return
         else:
             print('The robot with the name {},strength: {} and age {} is destroyed'.format(self.name, self.strength,
                                                                                            self.age_of_the_robot))
@@ -27,6 +28,8 @@ class Robot:
             print('There are {} robots left'.format(Robot.population))
             if Robot.population == 0:
                 print("{} was the last robot alive".format(self.name))
+            elif self.isAlive == False:
+                print('robot is already dead')
 
     def sayHi(self):
         '''Then we enter this method cause we realise this in the class object realisation'''
@@ -47,9 +50,9 @@ class Robot:
             print(
                 "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} is now dead".format(
                     robot1.name, robot2.name, winner_name, difference_in_strength, loser_name))
-
+            loser.__del__()
             loser.isAlive = False
-            del loser
+
 
         else:
             winner = robot2
@@ -60,8 +63,8 @@ class Robot:
             print(
                 "In the battle between {} and {}. {} was the winner with with the difference of strength: {}. The {} is now dead".format(
                     robot1.name, robot2.name, winner_name, difference_in_strength, loser_name))
+            loser.__del__()
             loser.isAlive = False
-            del loser
 
 
 robot1 = Robot("MaxGoodRobot", 17, 70, True)
@@ -78,5 +81,7 @@ Robot.compare(Robot)
 print('\nHere robots can continue their job.\n')
 
 print('Robots ended their job, let`s delete them\n')
-del robot1
-del robot3
+robot1.__del__()
+robot2.__del__()
+robot3.__del__()
+

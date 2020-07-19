@@ -1,32 +1,26 @@
 def reverse(text):
-    return text[::-1]  # Text in the opposite order. For example 'nice' will be 'ecin'
+    return text[::-1]
 
 
 def is_palindrome(text):
     return text == reverse(text)
 
 
-forbidden = ('.', '?', '!', ':', ';', '-', '(', ')', '[', ']', '"', ',')
-something = input("Enter your text: ")
-something.lower()
-
+delims = ('.', '?', '!', ':', ';', '-', '(', ')', '[', ']', '"', ',')
+something = input('Введите текст: ')
+something = something.lower()  # перевод в нижний регистр
 for i in range(len(something)):
-    for x in forbidden:
+    for x in delims:
         if something[i] == x:
-            something = something.replace(x, ' ')
+            something = something.replace(x, ' ')  # замена разделителя на пробел
+            print(something)
 list = something.split()  # разбивка на части по символам пробела
-# print(list)
+print(list)
 s = ""
-for x in list:
-    s += x
-if (is_palindrome(something)):
-    print("Yeah")
-
+for x2 in list:
+    s += x2  # конкатенация частей в слово без разделителей
+    print(s)
+if (is_palindrome(s)):
+    print("Да, это палиндром")
 else:
-    print('Not')
-
-captains = ['Janeway', 'Picard', 'Sisko']
-
-for i in range(len(captains)):
-    print(captains[i])
-    #TODO undertand this part of code
+    print("Нет, это не палиндром")

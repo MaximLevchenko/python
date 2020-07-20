@@ -1,7 +1,6 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from secrets import pw
 
 
 
@@ -10,7 +9,7 @@ from secrets import pw
 class InstaBot:
 
     def __init__(self, username, password):
-        self.username = username;
+        self.username = username
         self.driver = webdriver.Chrome()
 
         self.driver.get('https://www.instagram.com/?hl=ru')

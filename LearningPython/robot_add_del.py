@@ -35,7 +35,7 @@ class Robot:
     def sayHi(self):
         '''Then we enter this method cause we realise this in the class object realisation'''
         print('Hi, my name is {}'.format(self.name))
-    @staticmethod
+    
     def howManyRobots(self):
         '''Same with this one, it is entered in the sequence described in the method realisation'''
         print("We have {} robots".format(Robot.population))
@@ -83,3 +83,4 @@ robot3.howManyRobots()
 Robot.compare(Robot)
 
 print('Robots ended their job, let`s delete them\n')
+

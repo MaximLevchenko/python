@@ -25,7 +25,7 @@ x = 50
 
 
 def func():
-    global x  # We change the value of x in the main block of the programm by using identificator 'global
+    global x  # We change the value of x in the translator.py block of the programm by using identificator 'global
     print("x equals", x)
     x = 2
     print("Change x value on", x)

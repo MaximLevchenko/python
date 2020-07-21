@@ -22,7 +22,7 @@ class InstaBot:
             .click() #Submitting our log in form
         sleep(4)
         self.driver.find_element_by_xpath(
-            '/html/body/div[1]/section/main/div/div/div/div/button').click()  # Notifications
+            '/html/body/div[1]/section/translator.py/div/div/div/div/button').click()  # Notifications
         sleep(2)
         self.driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]').click()  # Notifications
         sleep(2)

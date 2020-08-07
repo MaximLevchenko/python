@@ -1,5 +1,5 @@
 import time
-
+import math
 
 def main():
     current_longest_chain = 0

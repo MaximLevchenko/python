@@ -1,3 +1,4 @@
+import time
 def main():
     current_largest_chain = 0  # This holds the longest chain produced
     number_to_collatz_up_to = 1000000  # This holds the edge number we are gonna collatz up to

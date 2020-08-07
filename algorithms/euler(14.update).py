@@ -1,8 +1,10 @@
 import time
+
+
 def main():
     current_longest_chain = 0
     number_that_produced_chain = 0
-    start=int(time.time())
+    start = int(time.time())
     x = 1
     number_to_collatz_up_to = 1000000
     while x < number_to_collatz_up_to:
@@ -14,12 +16,12 @@ def main():
 
         if current_chain > current_longest_chain:
             current_longest_chain = current_chain
-            number_that_produced_chain=x
-            print(number_that_produced_chain,current_longest_chain)
+            number_that_produced_chain = x
+            print(number_that_produced_chain, current_longest_chain)
 
         current_chain = 1
         x += 1
-    print(number_that_produced_chain,current_longest_chain )
+    print(number_that_produced_chain, current_longest_chain)
 
 
 def collatz(number):

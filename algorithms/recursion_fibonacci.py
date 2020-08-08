@@ -8,7 +8,7 @@ def fib_recursive(n):
 
 
 print(fib_recursive(4))
-
+'''Another example of recursion is below'''
 # def factorial(n):
 #    print("factorial has been called with n = " + str(n))
 #    if n == 1:

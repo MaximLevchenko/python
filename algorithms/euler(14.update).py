@@ -31,6 +31,6 @@ def collatz(number):
         number = number * 3 + 1
     # print(number)
     return number
-
+print('f')
 
 main()

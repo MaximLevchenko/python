@@ -4,7 +4,6 @@ import math
 def main():
     current_longest_chain = 0
     number_that_produced_chain = 0
-    start = int(time.time())
     x = 1
     number_to_collatz_up_to = 1000000
     while x < number_to_collatz_up_to:
@@ -31,6 +30,5 @@ def collatz(number):
         number = number * 3 + 1
     # print(number)
     return number
-print('f')
 
 main()

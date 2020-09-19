@@ -29,7 +29,7 @@ def main():
         for j in range(len(grid[i]) - 3):  # Goes though each element in each list ... len(grid[i]-3) because we want to prevent out of bunds
             for k in range(length_of_the_line):
                 current *= grid[i][j + k]  # We multiply the value of the first row in range of 4: 8*2*22*97, then we move on to the second number in the loop
-                # print(current)
+                print(current)
             if current > largest_so_far:
                 largest_so_far = current
             current = 1

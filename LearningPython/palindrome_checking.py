@@ -10,6 +10,7 @@ delims = ('.', '?', '!', ':', ';', '-', '(', ')', '[', ']', '"', ',')
 something = input('Введите текст: ')
 something = something.lower()  # перевод в нижний регистр
 for i in range(len(something)):
+    print(something[i])
     for x in delims:
         if something[i] == x:
             something = something.replace(x, ' ')  # замена разделителя на пробел

@@ -30,17 +30,16 @@ def login():
 
 @app.route('/user')
 def user():
-    if 'user' in session:
-        user = session['user']
-        return f"<h1>{user}</h1>"
-    else:
+    if 'user' in session:# if we logged, redirect the user page
+        return render_template('user.html')
+    else: # if we are not logged, redirect to the login page
         return redirect(url_for('login'))
 
 
 @app.route('/logout')
 def logout():
     session.pop('user', None) #just pops out the session
-    return redirect(url_for('login'))#when we popped out the session, we come back to the login page
+    return redirect(url_for('login'))#when we popped out the session, we com
 
 
 if __name__ == '__main__':

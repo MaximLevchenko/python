@@ -75,13 +75,12 @@ def login():
 @app.route('/user', methods=["POST", "GET"])
 def user():
     email = None
-
     if 'user' and 'password' in session:  # check, if the user with the correct password in session
         user2 = session['user']
         password1 = session['password']
         if request.method == "POST":  # if the user was not previously in the database, we want to add email for him
             email1 = request.form['email']
-            found_user = users.query.filter_by(name=user2, password=password1).first() # we find that user in the db with corresponding data and adding email to the db
+            found_user = users.query.filter_by(name=user2 , password=password1).first() # we find that user in the db with corresponding data and adding email to the db
             found_user.email = email1
             db.session.commit()
             flash(f"Here is your email: {email1}")
@@ -89,7 +88,7 @@ def user():
             if 'email' in session:
                 email = session['email']
         return render_template('user.html', email=email)  # if it is, displays the email of that user typed earlier, which was saved in the db
-    else:  # if we are not logged, redirect to the login page
+    elif 'user' and 'password' not in session:  # if we are not logged, redirect to the login page
         return redirect(url_for('login'))
 
 # page for admin

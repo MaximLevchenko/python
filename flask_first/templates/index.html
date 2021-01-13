@@ -1,3 +1,31 @@
 {% extends 'base.html' %}
-{%block body%}<h1></h1>{%endblock%}
-{%block content%}<h1>Do you want to<a href="{{url_for('login')}}"> log in?</a></h1>{%endblock%}
+{%block body%}{%endblock%}
+
+{%block content%}<h1>Do you want to<a href="{{url_for('login')}}"> log in?</a></h1>
+
+<style>
+    a {
+        text-underline-color: black;
+
+    }
+
+    h1 {
+        color: black;
+        text-align: center;
+        margin-top: 200px;
+
+    }
+
+    body {
+        background: aliceblue;
+        background: url("https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+    }
+</style>
+
+{%endblock%}
+

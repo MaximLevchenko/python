@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
-{%block title%}Login Page{%endblock%}
+{%block body%}Login Page{%endblock%}
 {%block content%}
+    {% if error %}
+        <p class="error"><strong>Error:</strong>{{error}}
+    {% endif %}
 
-<form action="#" method="post">
-    <p>Name:</p>
-    <p><input type="text" name="nm"/></p>
-    <p><input type="submit" value="submit"/></p>
-</form>
+        </p>
+
+    <form action="#" method="post">
+        <dl>
+            <dt>Name:</dt>
+                <dd><input type="text" name="nm" placeholder="Username" value="{{request.form.username}}"/></dd>
+            <dt>Password:</dt>
+                <dd><input type="password" placeholder="Password" name="ps" value="{{
+          request.form.password }}"></dd>
+        </dl>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
 
 {%endblock%}

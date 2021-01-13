@@ -81,7 +81,6 @@ def user():
         password1 = session['password']
         if request.method == "POST":  # if the user was not previously in the database, we want to add email for him
             email1 = request.form['email']
-            email2 = session['email']
             found_user = users.query.filter_by(name=user2, password=password1).first() # we find that user in the db with corresponding data and adding email to the db
             found_user.email = email1
             db.session.commit()
@@ -134,4 +133,4 @@ def admin():
     return redirect(url_for('user', name='Admin!!'))  #when we try to access admin, it just redirects to the page we want
                                       # (in brackets we use the name of the function)
 '''
-#  TODO write a function, which delets users in the database, you can use Tech With Tim video(8) as an example
+#  TODO write a function, which deletes users in the database, you can use Tech With Tim video(8) as an example

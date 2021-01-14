@@ -2,10 +2,11 @@ from datetime import timedelta
 
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_first.admin.second import second
 # basic Flask app setup
 app = Flask(__name__)
 app.secret_key = 'hello world'
+app.register_blueprint(second, url_prefix='/test')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3.html'  # access to the SQL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(minutes=5)  # setting the time for long-lasting session

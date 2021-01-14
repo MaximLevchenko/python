@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%block title%}<h1></h1>{%endblock%}
+{%block content%}
+<h1>{{session['user']}}</h1>
+<form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter email" value="{{email if email}}"/>
+    <input type="submit" value="submit"/>
+</form>
+
+
+{%endblock%}

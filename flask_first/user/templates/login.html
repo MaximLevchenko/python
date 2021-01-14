@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block body%}Login Page{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="/flask_first/static/styles/style.css">
+<style>
+
+
+    body {
+        background: aliceblue;
+        background: url("https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;);
+    }
+
+
+</style>
+{% if error %}
+<p class="error"><strong>Error:</strong>{{error}}
+    {% endif %}
+
+</p>
+<div style="text-align: center">
+    <form action="#" method="post">
+        <dl>
+            <dt>Name:</dt>
+            <dd><input type="text" name="nm" placeholder="Username" value="{{request.form.username}}"/></dd>
+            <dt>Password:</dt>
+            <dd><input type="password" placeholder="Password" name="ps" value="{{
+          request.form.password }}"></dd>
+        </dl>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+</div>
+
+
+{%endblock%}

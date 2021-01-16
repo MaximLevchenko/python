@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{url_for('home')}}">Navigation bar</a>
+        <a class="navbar-brand" href="{{url_for('home_page.home')}}">Navigation bar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -20,11 +20,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
-                <a class="nav-link" href="{{url_for('login')}}">Login</a>
-                <a class="nav-link" href="{{url_for('user')}}">User's personal account</a>
-                <a class="nav-link " href="{{url_for('logout')}}">Logout</a>
-                <a class="nav-link " href="{{url_for('view')}}">Database</a>
+                <a class="nav-link active" aria-current="page" href="{{url_for('home_page.home')}}">Home</a>
+                <a class="nav-link" href="{{url_for('login_user.login')}}">Login</a>
+                <a class="nav-link" href="{{url_for('login_user.user')}}">User's personal account</a>
+                <a class="nav-link " href="{{url_for('logout_user.logout')}}">Logout</a>
+                <a class="nav-link " href="{{url_for('login_user.view')}}">Database</a>
             </div>
         </div>
     </div>
@@ -67,25 +67,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
         function delete_flash(flash){
-         $(flash).parent().remove()
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         $(flash).parent().remove()}
 </script>
-
-</body>
-</html>

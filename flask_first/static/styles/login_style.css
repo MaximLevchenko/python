@@ -1,0 +1,7 @@
+#parent {
+   display: table;
+   width: 100%;
+}
+#form_login {
+    margin: auto;
+}

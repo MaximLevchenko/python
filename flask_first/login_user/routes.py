@@ -39,14 +39,14 @@ def login():
                 db.session.add(usr)
                 db.session.commit()
             return redirect(
-                url_for('login_user.user'))  # redirecting to the user's page after logging in(using user's name)
+                url_for('login_user.user', title='User`s page'))  # redirecting to the user's page after logging in(using user's name)
     else:  # below is a standard script, which checks whether we are logged or not
         if 'user' in session:  # if user is already logged, it will download the user page.
             flash('You are already logged in, to log out, type logout')
             return redirect(url_for('user'))
         else:
             flash("You have not logged yet", category='success')
-            return render_template('login.html', error=error)  # if it didn't go properly, we force the comeback
+            return render_template('login.html', title='Login')  # if it didn't go properly, we force the comeback
             # to the login page again
 
 
@@ -67,7 +67,7 @@ def user():
         else:
             if 'email' in session:
                 email = session['email']
-        return render_template('user.html', email=email)  # if it is, displays the email of that user typed earlier, which was saved in the db
+        return render_template('user.html', email=email, title='User`s page')  # if it is, displays the email of that user typed earlier, which was saved in the db
     elif 'user' not in session:  # if we are not logged, redirect to the login page
         return redirect(url_for('login_user.login'))
 

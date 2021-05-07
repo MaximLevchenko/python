@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="#">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join today</legend>
+            <div class="form-group"><!-- error hadling-->
+                {{ form.username_reg.label(class="form-control-label") }}
+                {% if form.username_reg.errors %}
+                    {{ form.username_reg(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username_reg.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username_reg(class="form-control form-control-lg is-valid") }}
+                    <div class="col-md-4 mb-3">
+                      <div class="valid-feedback">
+
+                      </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.email_reg.label(class="form-control-label") }}
+                {% if form.email_reg.errors %}
+                    {{ form.email_reg(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email_reg.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email_reg(class="form-control form-control-lg is-valid") }}
+                      <div class="valid-feedback">
+
+                      </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password_reg.label(class="form-control-label") }}
+                {% if form.password_reg.errors %}
+                    {{ form.password_reg(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password_reg.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password_reg(class="form-control form-control-lg is-valid") }}
+                    <div class="col-md-4 mb-3">
+                      <div class="valid-feedback">
+
+                      </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password_reg_conf.label(class="form-control-label") }}
+                {% if form.password_reg_conf.errors %}
+                    {{ form.password_reg_conf(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password_reg_conf.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password_reg_conf(class="form-control form-control-lg is-valid") }}
+                      <div class="valid-feedback">
+
+                      </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class='btn btn-outline-info') }}
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    ALready have an account? <a class="ml-2" href="{{ url_for('login1') }}">Sign In</a><!--we are actually referring to the function login1, not to the template -->
+
+                </small>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+</div>
+{% endblock %}
